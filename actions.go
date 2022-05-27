@@ -20,6 +20,6 @@ func filterOut(path, ext string, minSize int64, info os.FileInfo) bool {
 }
 
 func listFile(path string, out io.Writer) error {
-	_, err := fmt.Fprintln(out, path)
+	_, err := fmt.Fprintln(out, filepath.ToSlash(path))
 	return err
 }
